@@ -2,6 +2,14 @@
 
 Cada atualização deve registrar o que mudou, as verificações realizadas e eventuais pendências. Datas no horário de Brasília.
 
+## 2026-11-13 — Repositório público para portfólio
+
+**Alterações:** repositório tornado público após autorização do responsável para divulgar os materiais; descrição profissional, link do site e tópicos de tecnologias configurados no GitHub.
+
+**Verificações realizadas:** API pública do GitHub consultada sem autenticação, confirmando a visibilidade pública; verificador local do projeto e conferência de espaços do Git.
+
+**Publicação:** código, documentação e histórico disponíveis para avaliação por recrutadores. Não houve alteração do site em produção.
+
 ## 2026-11-13 — Organização profissional e verificações
 
 **Alterações:** documentação para portfólio com tecnologias, funcionalidades, decisões técnicas e execução local; revisão das notas de manutenção; verificador sem dependências externas; fluxo de GitHub Actions; proteção adicional no `.gitignore`; orientação persistente para registrar as próximas atualizações.
