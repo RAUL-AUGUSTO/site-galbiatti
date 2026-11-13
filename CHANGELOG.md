@@ -10,7 +10,7 @@ Cada atualização deve registrar o que mudou, as verificações realizadas e ev
 
 **Site em produção:** página principal, privacidade, robots.txt e sitemap responderam HTTP 200 por HTTPS. A página principal retornou CSP, HSTS e X-Content-Type-Options. Não foi necessário alterar o conteúdo do site nem executar um deploy do Firebase nesta atualização.
 
-**Limitações e pendências:** não foram executados testes visuais em navegador, Lighthouse ou auditoria formal de acessibilidade. A busca por padrões não constitui auditoria completa de segredos. O repositório estava privado na consulta; acesso público depende da decisão do responsável. A execução remota do novo fluxo precisa ser confirmada após o push. Dados institucionais, materiais do site e versões anteriores permanecem no histórico.
+**Limitações e pendências:** não foram executados testes visuais em navegador, Lighthouse ou auditoria formal de acessibilidade. A busca por padrões não constitui auditoria completa de segredos. O repositório estava privado na consulta; acesso público depende da decisão do responsável. O fluxo remoto passou no GitHub Actions: https://github.com/RAUL-AUGUSTO/site-galbiatti/actions/runs/43497452965 (commit 43aa6b5). Dados institucionais, materiais do site e versões anteriores permanecem no histórico.
 
 ## 2026-11-13 — Apresentação inicial de portfólio
 
