@@ -63,4 +63,14 @@ site-galbiatti/
 
 O repositório apresenta a implementação do site para avaliação técnica. A marca, as fotografias, os depoimentos e os textos institucionais pertencem aos respectivos titulares; sua presença neste projeto não concede autorização de reutilização.
 
-As notas para manutenção e validação estão em [REVISAO.md](REVISAO.md).
+## Qualidade e atualizações
+
+Com Node.js instalado, execute a verificação automatizada:
+
+```sh
+node scripts/verify.mjs
+```
+
+O comando verifica arquivos e âncoras locais das páginas, IDs duplicados, configurações JSON, hash CSP dos dados estruturados, sintaxe JavaScript e alguns padrões conhecidos de credenciais. A mesma verificação está configurada no GitHub Actions a cada push e pull request. Ela não substitui testes de navegação em navegador ou uma auditoria de segurança.
+
+As notas de manutenção estão em [REVISAO.md](REVISAO.md). O [histórico de atualizações](CHANGELOG.md) registra mudanças, verificações e limitações de cada entrega.
