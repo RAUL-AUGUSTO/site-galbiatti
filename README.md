@@ -1,88 +1,66 @@
-# Galbiatti Contabilidade Consultiva
+﻿# Galbiatti Contabilidade — Site institucional
 
-Site institucional estático em HTML, CSS e JavaScript. Não precisa de instalação de pacotes nem de build.
+Projeto de front-end para apresentar os serviços, a equipe e os canais de contato de um escritório de contabilidade. Desenvolvido com HTML, CSS e JavaScript, com foco em navegação responsiva e organização do conteúdo.
 
-- Domínio: https://galbiatticontabilidade.com.br
-- Firebase: `galbiatti-contabilidade`
-- CNPJ informado: 61.057.494/0001-35
-- Contadora: Jéssica Galbiatti — CRC 357758-SP
+**[Acessar o site](https://galbiatticontabilidade.com.br)**
 
-## Publicar
+![Identidade visual do projeto](assets/og-image.jpg)
 
-1. Guarde a pasta anterior como backup.
-2. Extraia este ZIP em uma pasta nova.
-3. Abra o terminal na pasta `galbiatti-contabilidade-site`, onde está `firebase.json`.
-4. Se necessário, execute `firebase login` com a conta que administra o projeto.
-5. Publique:
+## Tecnologias
+
+- HTML5 semântico.
+- CSS3 para layout responsivo e identidade visual.
+- JavaScript sem frameworks para as interações.
+- Firebase Hosting para hospedagem e configuração de cabeçalhos HTTP.
+
+O projeto não depende de instalação de pacotes ou de uma etapa de build.
+
+## Funcionalidades
+
+- Menu adaptado a dispositivos móveis e indicação da seção ativa.
+- Carrossel da equipe com botões, arraste, gestos e navegação por teclado.
+- Biografias e descrições de serviços expansíveis com `details` e `summary`.
+- Links diretos para os canais de atendimento.
+- Páginas de privacidade e de endereço não encontrado.
+
+## Decisões técnicas
+
+- **Acessibilidade:** controles com atributos ARIA, gerenciamento de foco nos cartões fora da área visível e respeito à preferência por movimento reduzido.
+- **Melhoria progressiva:** descrições expansíveis usam elementos nativos do HTML; o conteúdo permanece disponível sem JavaScript.
+- **Imagens:** uso de WebP nos retratos e de formatos adequados para ícones e compartilhamento.
+- **SEO:** metadados, URL canônica, dados estruturados em JSON-LD, sitemap e robots.txt.
+- **Hospedagem:** configuração de cache por tipo de arquivo e cabeçalhos como Content Security Policy e X-Content-Type-Options.
+
+Essas decisões estão implementadas no código; não representam certificação de acessibilidade ou resultados de auditoria de desempenho.
+
+## Executar localmente
 
 ```sh
-firebase deploy --only hosting --project galbiatti-contabilidade
+git clone https://github.com/RAUL-AUGUSTO/site-galbiatti.git
+cd site-galbiatti
 ```
 
-Não precisa executar `firebase init`. O `.firebaserc` também aponta para o projeto correto. O deploy atualiza o domínio já associado ao Hosting. Este pacote não altera DNS, verificações do Google ou associação de domínio. Não remova os registros A/TXT existentes no Registro.br.
+Abra `index.html` no navegador ou use um servidor estático de sua preferência. Para a navegação direta pelos arquivos, abra `privacidade.html` e `404.html` pelos respectivos nomes.
+
+URLs sem extensão e cabeçalhos HTTP dependem da hospedagem e não são reproduzidos ao abrir os arquivos diretamente.
 
 ## Estrutura
 
-| Caminho | Conteúdo |
-| --- | --- |
-| `index.html` | Conteúdo, equipe, serviços, depoimentos, contatos e JSON-LD |
-| `privacidade.html` | Política disponível em `/privacidade` no Firebase |
-| `404.html` | Página de endereço inexistente |
-| `css/style.css` | Layout, identidade visual e comportamento responsivo |
-| `js/main.js` | Menu, aba ativa, carrossel, horário e retorno ao topo |
-| `assets/` | Marca, favicon, fotos e imagem de compartilhamento |
-| `firebase.json` | URLs limpas, cache e cabeçalhos de segurança |
-| `sitemap.xml` e `robots.txt` | Descoberta das páginas pelos buscadores |
+```text
+site-galbiatti/
+├── assets/             # Imagens, marca e ícones
+├── css/                # Estilos e ajustes responsivos
+├── js/main.js          # Interações da interface
+├── index.html          # Página principal
+├── privacidade.html    # Política de privacidade
+├── 404.html            # Página de erro
+├── firebase.json       # Configuração de hospedagem
+├── robots.txt          # Orientações para rastreadores
+└── sitemap.xml         # Mapa das páginas
+```
 
-## Navegação e apresentação
+## Contexto de portfólio
 
-Ordem do menu: Início, Especialistas, Serviços, Depoimentos e Contato. Os IDs `inicio`, `especialistas`, `servicos`, `depoimentos` e `contato` identificam os destinos. Cada seção usa `data-nav` para indicar a aba ativa durante a rolagem. Mantenha esses identificadores ao editar os textos.
+O repositório apresenta a implementação do site para avaliação técnica. A marca, as fotografias, os depoimentos e os textos institucionais pertencem aos respectivos titulares; sua presença neste projeto não concede autorização de reutilização.
 
-Os marcadores de localização ficam acima dos títulos, com tipografia pequena. Os títulos combinam a fonte principal e detalhes serifados em dourado. A seção Como trabalhamos preserva texto direto, com números e detalhes dourados.
-
-O gráfico da abertura permanece oculto até 780 pixels. O formulário continua removido. O contato usa uma grade única com cinco itens, sem painel separado para o WhatsApp. Os links abrem WhatsApp, e-mail, Google Maps e Instagram; mensagens só são enviadas após confirmação no aplicativo.
-
-## Equipe
-
-| Ordem | Nome | Cargo | Arquivo-base da foto |
-| --- | --- | --- | --- |
-| 1 | Jéssica Galbiatti | Contadora — CRC 357758-SP | `equipe-revisada-jessica` |
-| 2 | Carlos Ferreira | COO Comercial | `equipe-revisada-carlos` |
-| 3 | Jaqueline Galbiatti | Administradora | `equipe-contorno-jaqueline` |
-| 4 | Isabela dos Santos | Atendimento | `equipe-contorno-isabela` |
-| 5 | Ana Julia Vitoriano França | Advogada — OAB/SP 500.498 | `equipe-revisada-anajulia` |
-| 6 | Isadora Forlini | Gestão de Redes Sociais | `equipe-revisada-isadora` |
-
-As descrições completas fornecidas estão no HTML, em `details.expert-about`. Nome e função são exibidos de início; a biografia abre por Sobre o profissional. Não há corte de texto nem rolagem interna. A abertura de uma biografia fecha a outra. Ao sair da área visível do carrossel, a biografia é fechada e o cartão deixa de receber foco.
-
-O carrossel mostra três profissionais a partir de 1100 pixels, dois entre 700 e 1099 e um abaixo de 700. Aceita deslize, arraste e teclado. Em telas largas com mouse, também há setas laterais. Os traços indicam a posição atual e o carrossel não avança automaticamente. Com foco na região, setas avançam/retornam e Home/End vão ao começo/fim. As transições respeitam a preferência de movimento reduzido.
-
-Os retratos ocupam a parte superior dos cartões e usam o azul-marinho do site como fundo. Foram feitos recortes e ajustes de enquadramento nas fotos originais, sem gerar novos retratos. Os arquivos são `.webp`. Use um novo nome ou uma versão no endereço se precisar invalidar o cache de imagens.
-
-Sem JavaScript, as fotos e biografias continuam no HTML. A equipe pode ser percorrida pela rolagem horizontal nativa e os controles de biografia continuam funcionando.
-
-## Serviços e depoimentos
-
-Os 17 serviços seguem os quatro grupos do documento. As descrições usam `details`/`summary`, funcionando também sem JavaScript. Ao modificar um serviço, atualize o título/descrição visíveis e o catálogo `hasOfferCatalog` no JSON-LD.
-
-Os cinco depoimentos estão completos em grade, com recortes das imagens fornecidas. A imagem de Carlos Barbisan é identificada como ambiente. Não há estrelas, nota média ou alegação de avaliações verificadas do Google. O relato de Alex continua sem valor financeiro. Valide a redação e as autorizações de uso de nomes/imagens antes de publicar.
-
-## Dados do escritório e privacidade
-
-CNPJ e CRC foram inseridos conforme os dados fornecidos. O CRC está associado à Jéssica, sem ser apresentado como registro da empresa. O OAB/SP de Ana Julia aparece somente em seu cartão profissional. Os registros não foram consultados em bases externas.
-
-A política explica os contatos diretos e permanece vinculada no rodapé. Não há analytics, pixel publicitário, formulário ou backend de contato. Firebase e Google Fonts permanecem descritos como fornecedores de hospedagem e fontes. A revisão profissional da política continua recomendada antes de ampla divulgação.
-
-O status de atendimento usa somente dia da semana e horário de Brasília, atualizado a cada minuto. Não consulta feriados ou disponibilidade em tempo real.
-
-## SEO e manutenção
-
-Canonical, título SEO, descrição, domínio, compartilhamento, favicon e robots foram preservados. O JSON-LD recebeu o CNPJ informado e mantém o catálogo de serviços. O sitemap foi atualizado na data desta edição. A equipe mantém `data-nosnippet` para não fornecer trechos de biografias à descrição da busca. O Google precisa rastrear novamente; não há prazo ou posição garantidos.
-
-Após editar CSS/JS, atualize `?v=` nas referências HTML. Imagens têm cache de 30 dias. O HTML usa revalidação.
-
-A CSP permite JavaScript local e identifica o JSON-LD por hash SHA-256. Se editar esse bloco, recalcule o hash em `script-src` do `firebase.json`. A política foi atualizada junto da inclusão do CNPJ. Não desative a política inteira para liberar um recurso novo.
-
-HTTPS, cabeçalhos, cache e URLs limpas devem ser conferidos no domínio após o deploy: a prévia local não aplica a configuração HTTP do Firebase.
-
-As verificações e os limites desta entrega estão em `REVISAO.md`.
+As notas para manutenção e validação estão em [REVISAO.md](REVISAO.md).
