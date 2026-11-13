@@ -1,0 +1,2 @@
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#07182f;color:#fff;font-family:system-ui,sans-serif;text-align:center;padding:24px}h1{font-size:clamp(28px,6vw,44px);margin:0 0 12px;color:#d9ad4e;font-weight:600}p{color:#c2ccda;margin:0 0 28px}a{display:inline-block;background:#d9ad4e;color:#07182f;padding:14px 22px;font-weight:700;text-decoration:none}
+*{box-sizing:border-box}a:focus-visible{outline:3px solid #fff;outline-offset:4px}
